@@ -1,0 +1,122 @@
+%percent is used for comments. you wont need them ever, but i'm using them for explanations
+
+%%the following up until "\begin{document}" is called the "header." This sets up the whole document (format, style, additional things)
+
+%\command[modifier1, modifier2]{argument} is a general format
+\documentclass[11pt, amssymb, one column,letterpaper]{article}
+\usepackage{times, amsmath, amssymb, cancel, changepage, gensymb, graphicx, mathrsfs, amsthm, lipsum, fancyhdr}
+\usepackage[margin=.75in]{geometry}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+\newcommand{\ihat}{\mathbf {\hat \imath}}
+\newcommand{\jhat}{\mathbf {\hat \jmath}}
+\title{Company Valuation Exercise}
+%you only really need a documentclass/ packages to make a document, the following is just nice formatting. You can easily remove it or look up something else
+%that you like better
+
+\pagestyle{fancy}
+\lhead{Hilliard}
+\chead{\huge COMPANY VALUATION EXERCISE \normalsize}
+%note how I use "\#" to denote "#." This is because # is reserved (for something). Similarly, % is reserved for comments, so to use it you need \%.
+%other such things include { }.
+\rhead{BA654}
+\fancypagestyle{plain}{
+\fancyhead[LE, RO]{Hilliard}
+\fancyhead[LO, RE]{ COMPANY VALUATION EXERCISE }}
+
+%end of header, beginning of document
+
+\begin{document}
+Answer the questions in this case study using the assignments posted in BbLearn.
+%To insert image:
+%\begin{center}
+%\includegraphics[scale=.8]{ProblemSet3Graph2.png}
+%\end{center}
+%Note that the file must be in the same folder. 
+
+\section{Choose a Company (5 points; due August 29)}
+\begin{enumerate}
+\item Choose a U.S.-based, publicly-traded company that is a member of the S\&P 500. Members of the S\&P 500 have the most information available. A list of the companies is in the constituent list at  \url{https://datahub.io/core/s-and-p-500-companies}. Each member of a group must choose a unique company. Check to be sure that your stock has five years of trading data available. Please avoid choosing a bank, insurance company, or other financial services company as their financial statements are more difficult to analyze.
+\item Document the following information about your company from \url{http://www.wsj.com}:
+\begin{multicols}{2}
+\begin{enumerate}
+\item Company name
+\item Ticker symbol
+\item Business description in three sentences or less
+\item Most recent year sales
+\item Most recent year income
+\item Recent price
+\item Any dividends paid in the past twelve months
+\item Return on equity
+\item Dividend yield
+\item Price to earnings ratio (trailing twelve months)
+\item Any recent news of interest about your company
+\end{enumerate}
+\end{multicols}
+\end{enumerate}
+\section{Calculate a Beta (5 points; due September 10 -- Optional lab September 7)}
+\begin{enumerate}
+\item Download five years of stock price data for your company from wsj.com (Use August 31, 2013 as your first date and August 31, 2018 as your last date.).
+\item Sort by date from oldest to newest.
+\item Calculate returns based on closing price. Use a separate worksheet for each set of returns.
+\begin{enumerate}
+\item Daily
+\item Weekly
+\item Monthly
+\end{enumerate}
+\item Copy appropriate S\&P 500 returns (posted in BbLearn) into each worksheet.
+\item Use the =SLOPE command to calculate the beta for each set of returns.
+\begin{enumerate}
+\item Use one year of returns for daily returns (Sept. 5, 2017-Aug. 31, 2018.)
+\item Use three years of returns for weekly returns (You will need to calculate weekly returns from Aug. 29, 2014-Aug. 31, 2018 using PivotTables or another method.)
+\item Use five years of returns for monthly returns (PivotTables can also calculate monthly returns. from Aug. 30, 2013-Aug. 31, 2018.)
+\end{enumerate}
+\item How do the betas differ for each return period?
+\item Download the most recent PDF \textit{Value Line} report for your company from \url{http://libraryguides.nau.edu/ValueLineInvest}. How do your calculated betas compare to the beta reported by \textit{Value Line}? Why do you think it differs? (Note: Save this PDF for the next assignment.)
+\item Calculate the one-year standard deviation of your stock's returns.
+\end{enumerate}
+\section{Value your Company's Stock (10 points; due September 12)}
+\begin{enumerate}
+\item Using the dividend discount model, estimate the intrinsic value of your company's stock.
+\begin{enumerate}
+\item Estimate the cost of equity based on the Capital Asset Pricing Model. Assume that the expected market return is 9\% and the risk-free rate is 1.5\%.
+\item Determine whether the expected dividend growth rate is feasible in the long-run. 
+\item If the expected dividend growth rate is not feasible in the long-run, estimate how long it will be feasible, and what the long-run growth rate is expected to be.
+\item If your firm does not pay dividends, estimate a point in future when you think dividends are likely, and use the dividend discount model from that point on.)
+\end{enumerate}
+\item Using the corporate valuation model, estimate the intrinsic value of your company's stock.
+\begin{enumerate}
+\item Estimate the company's Weighted Average Cost of Capital based on market values of debt and equity and the corporate tax rate. When estimating the cost of equity based on the Capital Asset Pricing Model, assume that the expected market return is 9\% and the risk-free rate is 1.5\%.
+\item Determine whether the expected free cash flow (reported as ``Cash Flow'' in \textit{Value Line}) growth rate is feasible in the long-term.
+\item If the expected free cash flow growth rate is not feasible, estimate how long it will last, and what the long-run growth rate is expected to be.
+\item Estimate the value of the firm's operations using the corporate value method.
+\item Deduct the current book value of debt and preferred stock from the value of the firm's operations.
+\item Divide the equity value by the number of shares outstanding.
+\end{enumerate}
+\item Compare the share values you estimated to each other and the current share price. Comment on any differences.
+\end{enumerate}
+\section{Form a Portfolio of your Group's Stocks (20 points (group); due September 26)}
+\begin{enumerate}
+\item Form a portfolio comprised of an equal amount of each of your group members' stocks.
+\item If the expected return for the coming year is based on past results (for example, the one-year return), what is the expected return for your portfolio?
+\item Based on one-year of daily returns, calculate the standard deviation of your portfolio. How does this compare to the average of the standard deviations of the stocks in your portfolio?
+\item Calculate your portfolio beta.
+\end{enumerate}
+\section{Value an Option on your Company's Stock (10 points; due October 3)}
+\begin{enumerate}
+\item Estimate the daily one-year standard deviation of your stock's returns.
+\item Assume that the risk-free rate is 1.5\%.
+\item Estimate the value of an at-the-money call option that expires on January 19, 2018.
+\item Estimate the value of an at-the-money put option that expires on January 19, 2018.
+\item For both call and put options, what is the sensitivity of the value of the option to the following factors:
+\begin{enumerate}
+\item Volatility (at 2x current standard deviation and one-half current standard deviation)
+\item time (six month option and two-year option)
+\item risk-free rate (0.75\% and 3\%)
+\item current stock price (\$5 higher and \$5 lower)
+\item strike price (\$5 higher than current price and \$5 lower than current price)
+\item On wsj.com, find a currently trading option close to the parameters provided above (at-the-money option expiring January 19, 2018). How close is your estimate? Can you explain any deviations?
+\end{enumerate}
+\end{enumerate}
+\end{document}
